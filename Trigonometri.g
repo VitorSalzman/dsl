@@ -11,17 +11,17 @@ grammar Trigonometri;
 
 /* entry point of parser */
 exp returns [double value]
-	:	optr '(' oprn ')'
+	:	optr '(' oprn ')' EOF
 	{
-		if($optr.text.equals("sin"))
+		if($optr.text.toLowerCase().equals("sin"))
 		{
 			$value = Math.sin(Math.toRadians(Float.parseFloat($oprn.text)));
 		}
-		else if($optr.text.equals("cos"))
+		else if($optr.text.toLowerCase().equals("cos"))
 		{
 			$value = Math.cos(Math.toRadians(Float.parseFloat($oprn.text)));
 		}
-		else if($optr.text.equals("tan"))
+		else if($optr.text.toLowerCase().equals("tan"))
 		{
 			$value = Math.tan(Math.toRadians(Float.parseFloat($oprn.text)));
 		}
@@ -29,7 +29,7 @@ exp returns [double value]
 	;
 
 optr
-	:	'sin' | 'cos' | 'tan'
+	:	'sin' | 'cos' | 'tan' | 'SIN' | 'COS' | 'TAN'
 	;
 
 oprn
