@@ -15,15 +15,15 @@ exp returns [double value]
 	{
 		if($optr.text.equals("sin"))
 		{
-			$value = Math.sin(Math.toRadians(Integer.parseInt($oprn.text)));
+			$value = Math.sin(Math.toRadians(Float.parseFloat($oprn.text)));
 		}
 		else if($optr.text.equals("cos"))
 		{
-			$value = Math.cos(Math.toRadians(Integer.parseInt($oprn.text)));
+			$value = Math.cos(Math.toRadians(Float.parseFloat($oprn.text)));
 		}
 		else if($optr.text.equals("tan"))
 		{
-			$value = Math.tan(Math.toRadians(Integer.parseInt($oprn.text)));
+			$value = Math.tan(Math.toRadians(Float.parseFloat($oprn.text)));
 		}
 	}
 	;
@@ -38,7 +38,7 @@ oprn
 
 /* use String representation for numeric value */
 Num
-	:	('0'..'9')+
+	:	('0'..'9')+ ('.' ('0'..'9')+)?
 	;
 	
 /* skip CRLF, tab */
