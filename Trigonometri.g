@@ -38,7 +38,7 @@ oprn
 
 /* use String representation for numeric value */
 Num
-	:	('0'..'9')+ ('.' ('0'..'9')+)?
+	:	('-')? ('0'..'9')+ ('.' ('0'..'9')+)?
 	;
 	
 /* skip CRLF, tab */
