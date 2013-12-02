@@ -1,5 +1,6 @@
 grammar Trigonometri;
 
+/*
 @parser::members
 {
 	@Override
@@ -8,6 +9,7 @@ grammar Trigonometri;
 		System.out.println("Custom Error...\n"+e);
 	}
 }
+*/
 
 /* entry point of parser */
 exp returns [double value]
